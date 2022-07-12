@@ -22,18 +22,23 @@ class SuperHero:
         pass
 
 
-class Attacks:
-    def roundhouse_kick(self):
-        print('Bump')
-
+# Добавил классы-миксины: FantasticWeapon, MeleeWeapon, RangeWeapon
+class FantasticWeapon:
     def incinerate_with_lasers(self):
         print('Wzzzuuuup!')
 
+
+class MeleeWeapon:
+    def roundhouse_kick(self):
+        print('Bump')
+
+
+class RangeWeapon:
     def fire_a_gun(self):
         print('PIU PIU')
 
 
-class Superman(SuperHero, Attacks):
+class Superman(SuperHero, FantasticWeapon, MeleeWeapon):
 
     def __init__(self):
         super(Superman, self).__init__('Clark Kent', True)
@@ -45,16 +50,13 @@ class Superman(SuperHero, Attacks):
         self.incinerate_with_lasers()
 
 
-class ChackNorris(SuperHero, Attacks):
+class ChackNorris(SuperHero, RangeWeapon):
 
     def __init__(self):
         super(ChackNorris, self).__init__('Chack Norris', False)
 
     def attack(self):
         self.fire_a_gun()
-
-    def ultimate(self):
-        pass
 
 
 class Media:
